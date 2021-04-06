@@ -1,16 +1,16 @@
 FROM python:3.8.9-slim-buster
-
+ENV TEST=%env.test42%
+# ENV MODEL_URL=http://google.com
+# ENV REQUIREMENTS=
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install ${REQUIREMENTS}
 
 COPY . .
+# RUN скачиваем curl MODEL_URL ./models/model_10001/
 
 EXPOSE 8000
-
-# RUN chmod +x
-#
-# ENTRYPOINT "./app.sh"
-
+echo $TEST
 CMD [ "sh", "./app.sh" ]

@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route(rule='/health', methods=['GET'])
 def health():
-    return 200
+        return '200'
 
 
 @app.route(rule='/predict', methods=['POST'])
