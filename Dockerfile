@@ -12,5 +12,5 @@ COPY . .
 # RUN скачиваем curl MODEL_URL ./models/model_10001/
 
 EXPOSE 8000
-echo $TEST
+# echo $TEST
 CMD [ "sh", "./app.sh" ]
