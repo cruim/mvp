@@ -1,5 +1,5 @@
 FROM python:3.8.9-slim-buster
-# ENV TEST=%env.test42%
+ENV TEST=%env.test42%
 # ENV MODEL_URL=http://google.com
 # ENV REQUIREMENTS=
 WORKDIR /usr/src/app
