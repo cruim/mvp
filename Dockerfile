@@ -1,6 +1,6 @@
 FROM python:3.8.9-slim-buster
 
-ENV TEST={$test42}
+#ENV TEST={$test42}
 #RUN echo $test42
 #RUN echo $(TEST)
 # ENV MODEL_URL=http://google.com

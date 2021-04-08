@@ -18,6 +18,7 @@ def health():
 @app.route(rule='/predict', methods=['POST'])
 @validate_json
 def predict():
+    print(os.environ)
     data = request.get_json()
     call_models = data.get('models')
     dataset = pd.DataFrame.from_dict([prepare_data(data['data'])], orient='columns')
@@ -44,4 +45,5 @@ def handle_custom_exception(error):
 
 
 if __name__ == "__main__":
+    print(os.environ)
     app.run()
