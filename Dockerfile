@@ -1,5 +1,8 @@
 FROM python:3.8.9-slim-buster
 ENV TEST=$test42
+ENV TEST=test42
+ENV TEST=$test36
+ENV TEST=test42
 ENV TEST2=123456
 #RUN echo $test42
 #RUN echo $(TEST)
