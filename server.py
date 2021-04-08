@@ -18,7 +18,6 @@ def health():
 @app.route(rule='/predict', methods=['POST'])
 @validate_json
 def predict():
-    print(os.environ)
     data = request.get_json()
     call_models = data.get('models')
     dataset = pd.DataFrame.from_dict([prepare_data(data['data'])], orient='columns')
@@ -31,7 +30,7 @@ def predict():
             scores.append(model.predict())
         else:
             scores.append({value: 'Invalid model'})
-    return jsonify(models=scores, status=200)
+    return jsonify(models=scores, status=200, test=os.environ)
 
 
 @app.errorhandler(400)
@@ -45,5 +44,4 @@ def handle_custom_exception(error):
 
 
 if __name__ == "__main__":
-    print(os.environ)
     app.run()
