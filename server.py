@@ -30,7 +30,8 @@ def predict():
             scores.append(model.predict())
         else:
             scores.append({value: 'Invalid model'})
-    return jsonify(models=scores, status=200, test=os.environ)
+    # print(type(dict(os.environ)))
+    return jsonify(models=scores, status=200, environ=dict(os.environ))
 
 
 @app.errorhandler(400)
