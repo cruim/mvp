@@ -1,9 +1,10 @@
 FROM python:3.8.9-slim-buster
 WORKDIR /opt/pipeline
 COPY . .
-ARG REQUIREMENTS
-ENV REQUIREMENTS=${REQUIREMENTS}
+ARG requirements
+ENV ADDITIONAL_REQUIREMENTS=${requirements}
 COPY requirements.txt ./
-RUN pip install --no-cache-dir ${REQUIREMENTS}
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install ADDITIONAL_REQUIREMENTS
 EXPOSE 8000
 CMD [ "sh", "./app.sh" ]
