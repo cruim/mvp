@@ -7,13 +7,14 @@ ENV test24=2626
 # ENV REQUIREMENTS=
 WORKDIR /usr/src/app
 
-COPY .env ./
-RUN /bin/bash -l -c "ls -a
+#COPY .env .
+#RUN /bin/bash -l -c "ls -a
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 # RUN pip install ${REQUIREMENTS}
 
 COPY . .
+ENV TESTY=.env
 # RUN скачиваем curl MODEL_URL ./models/model_10001/
 
 EXPOSE 8000
