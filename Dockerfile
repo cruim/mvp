@@ -7,7 +7,7 @@ ENV test24=2626
 # ENV REQUIREMENTS=
 WORKDIR /usr/src/app
 
-COPY [".env"]
+COPY .env ./
 RUN /bin/bash -l -c "ls -a
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
