@@ -3,7 +3,6 @@ FROM alpine/git:v2.30.1
 WORKDIR /opt/pipeline
 COPY . .
 ARG REQUIREMENTS
-RUN apt install git-all
 RUN git clone $REQUIREMENTS
 RUN pip install --upgrade pip
 RUN cd /opt/pipeline/mvp pip install -r requirements.txt
