@@ -1,4 +1,5 @@
 FROM python:3.8.9-slim-buster
+FROM alpine/git:v2.30.1
 WORKDIR /opt/pipeline
 COPY . .
 ARG REQUIREMENTS
