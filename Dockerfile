@@ -2,6 +2,7 @@ FROM python:3.8.9-slim-buster
 WORKDIR /opt/pipeline
 COPY . .
 ARG REQUIREMENTS
+RUN apt install git-all
 RUN git clone $REQUIREMENTS
 RUN pip install --upgrade pip
 RUN cd /opt/pipeline/mvp pip install -r requirements.txt
