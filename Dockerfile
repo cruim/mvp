@@ -8,7 +8,7 @@ RUN apt-get update && \
 ARG REQUIREMENTS
 RUN git clone $REQUIREMENTS
 RUN pip install --upgrade pip
-RUN cd /opt/pipeline/mvp pip install -r requirements.txt
+RUN cd /mvp pip install -r requirements.txt
 COPY requirements.txt ./
 #RUN pip install ${ADDITIONAL_REQUIREMENTS}
 #RUN pip install --no-cache-dir -r requirements.txt
