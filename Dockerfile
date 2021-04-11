@@ -2,9 +2,9 @@ FROM python:3.8.9-slim-buster
 WORKDIR /opt/pipeline
 COPY . .
 ARG REQUIREMENTS
-RUN git clone REQUIREMENTS
+RUN git clone REQUIREMENTS as req
 RUN pip install --upgrade pip
-RUN cd /opt/pipeline pip install --no-cache-dir -r requirements.txt
+RUN cd /opt/pipeline/req pip install -r requirements.txt
 COPY requirements.txt ./
 #RUN pip install ${ADDITIONAL_REQUIREMENTS}
 #RUN pip install --no-cache-dir -r requirements.txt
