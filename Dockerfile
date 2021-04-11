@@ -1,7 +1,10 @@
 FROM python:3.8.9-slim-buster
-FROM alpine/git:v2.30.1
+#FROM alpine/git:v2.30.1
 WORKDIR /opt/pipeline
 COPY . .
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
 ARG REQUIREMENTS
 RUN git clone $REQUIREMENTS
 RUN pip install --upgrade pip
