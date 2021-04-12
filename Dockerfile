@@ -6,9 +6,10 @@ RUN apt-get update && \
     apt-get install -y git
 ARG REQUIREMENTS
 RUN git clone $REQUIREMENTS
-RUN pip install --no-cache-dir -r /opt/pipeline/mvp/requirements.txt
+#RUN pip install --no-cache-dir -r /opt/pipeline/mvp/requirements.txt
 COPY requirements.txt ./
-RUN export MODEL=$(cat /opt/pipeline/mvp/test.txt)
+RUN export MODEL=$(cat /opt/pipeline/mvp/test.txt); echo $MODEL;
+ENV TEST=$MODEL
 #RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 CMD [ "sh", "./app.sh" ]
