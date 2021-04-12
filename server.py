@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route(rule='/health', methods=['GET'])
 def health():
-        return '200'
+    return '200'
 
 
 @app.route(rule='/predict', methods=['POST'])
@@ -30,8 +30,7 @@ def predict():
             scores.append(model.predict())
         else:
             scores.append({value: 'Invalid model'})
-    # print(type(dict(os.environ)))
-    return jsonify(models=scores, status=200, environ=dict(os.environ))
+    return jsonify(models=scores, status="200")
 
 
 @app.errorhandler(400)
