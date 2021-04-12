@@ -7,7 +7,7 @@ class Model:
     def __init__(self, data):
         self.__name__ = '10002'
         path = os.path.join(Path(__file__).parent.absolute(), "gradient_boosting_classifier_model.dat")
-        self.model = pickle.load(open(path, "rb"))
+        self.model = pickle.load(file=open(path, "rb"))
         self.data = data
 
     def preprocessing(self):
