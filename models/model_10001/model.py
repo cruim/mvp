@@ -1,4 +1,3 @@
-# from catboost import CatBoostClassifier
 import os
 import json
 
@@ -12,7 +11,7 @@ list(map(exec, load_method.get('import', False)))
 
 class Model:
     def __init__(self, data):
-        self.__name__ = 'catboost_sample'
+        self.__name__ = load_method.get('name', 'default')
         model = os.path.join(PATH, 'model')
         self.model = eval(load_method.get('load', False))
         self.data = data
