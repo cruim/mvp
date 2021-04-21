@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y git
 ARG REQUIREMENTS
 ARG BRANCH=master
-RUN git clone -b ${BRANCH}$REQUIREMENTS additional_params
+RUN git clone -b $BRANCH $REQUIREMENTS additional_params
 RUN pip install --no-cache-dir -r /opt/pipeline/additional_params/requirements.txt
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
